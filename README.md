@@ -172,8 +172,46 @@ PROGRESSION : :white_check_mark: :white_check_mark: :white_check_mark:
 
 ## :file_folder: STEP 4. Add missing planets
 
+Now, you should add missing planets.
+
+We won't write thousands of components here. The best is to refacto "_Earth.js_" onto a "_Planet.js_" component which will allow us to generate planets with datas from "_celestials.js_".
+
 ## :file_folder: STEP 5. Add rotations and revolutions
 
-## :file_folder: STEP 6. Add a Panel to display planets infos
+We have a universe, but it lacks life. We're Gods, let's snap to make magic happens.
+
+First, we need to create an axis for planet's revolution around the sun. To realize this, create an Ecliptic component.
+
+```js
+import { BufferGeometry, Vector3 } from "three";
+
+const Ecliptic = ({ xRadius, zRadius }) => {
+	const points = [];
+	for (let index = 0; index < 64; index++) {
+		const angle = (index / 64) * 2 * Math.PI;
+		const x = xRadius * Math.cos(angle);
+		const z = zRadius * Math.sin(angle);
+		points.push(new Vector3(x, 0, z));
+	}
+
+	points.push(points[0]);
+
+	const lineGeometry = new BufferGeometry().setFromPoints(points);
+	return (
+		<line geometry={lineGeometry}>
+			<lineBasicMaterial attach="material" color="#393e46" linewidth={10} />
+		</line>
+	);
+};
+
+export default Ecliptic;
+```
+
+Then, import the Ecliptic component in the Planet Component to add it to the meshes.
+
+The tricky part will be to make the positions of the planets move as the page refreshes.
+To do this, we will use the **_useFrame()_** Hook, which is the equivalent of **_animate()_** in ThreeJS.
+
+## :file_folder: STEP 6. BONUS
 
 #### Special Thanks to :
