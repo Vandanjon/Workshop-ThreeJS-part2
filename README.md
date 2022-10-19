@@ -42,13 +42,44 @@ src
 └── logo.svg
 ```
 
+Move the code from "_script.js_" into "_App.js_".
+
 Don't forget to remove unused imports.
+
+PROGRESSION : :white_check_mark:
 
 ### :trophy: STEP 1 DONE :trophy:
 
-:white_check_mark:
+## :file_folder: STEP 2. Convert code
 
-## :file_folder: STEP 2. render scene
+We will use React-Three Fiber, which is merely a React renderer for Three.js. The good thing is that it allows us to develop our solar system even faster.
+
+In "_App.js_", replace ALL the code by the following:
+
+```js
+import { TextureLoader } from "three";
+import { useLoader } from "@react-three/fiber";
+import { planetsDatas } from "../datas/celestials";
+
+const texture = planetsDatas[2].texture;
+
+<Canvas>
+	<ambientLight intensity={0.1} />
+
+	<directionalLight color="red" position={[0, 0, 5]} />
+
+	<mesh>
+		<sphereGeometry />
+		<meshStandardMaterial map={useLoader(TextureLoader, texture)} />
+	</mesh>
+</Canvas>;
+```
+
+Well done. We realized in a few lines the same job as before, but in half effort and time.
+
+PROGRESSION : :white_check_mark: :white_check_mark:
+
+### :trophy: STEP 2 DONE :trophy:
 
 ## :file_folder: STEP 2. create components
 
