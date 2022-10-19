@@ -58,7 +58,7 @@ In "_App.js_", replace ALL the code by the following:
 
 ```js
 import { TextureLoader } from "three";
-import { useLoader } from "@react-three/fiber";
+import { Canvas, useLoader } from "@react-three/fiber";
 import { planetsDatas } from "../datas/celestials";
 
 const texture = planetsDatas[2].texture;
@@ -81,16 +81,99 @@ PROGRESSION : :white_check_mark: :white_check_mark:
 
 ### :trophy: STEP 2 DONE :trophy:
 
-## :file_folder: STEP 2. create components
+## :file_folder: STEP 3. Build Sun-Earth relation
 
-## :file_folder: STEP 3. refacto
+Create two components : "_Sun.js_" and "_Earth.js_".
 
-## :file_folder: STEP 4. add textures
+In "_Sun.js_", put this code:
 
-## :file_folder: STEP 5. add rotations
+```js
+import { useRef } from "react";
+import { TextureLoader } from "three";
+import { useLoader } from "@react-three/fiber";
 
-## :file_folder: STEP 6.
+import { sunDatas } from "../datas/celestials";
 
-### :trophy: STEP 3 DONE :white_check_mark::white_check_mark::white_check_mark::eight_pointed_black_star::eight_pointed_black_star: :trophy:
+const Sun = () => {
+	const sunRef = useRef(null);
+	const relativeSize = sunDatas[0].relativeSize;
+	const texture = useLoader(TextureLoader, sunDatas[0].texture);
+	const intensity = sunDatas[0].intensity;
+
+	return (
+		<>
+			<pointLight position={[0, 0, 0]} intensity={intensity} castShadow />
+			<mesh ref={sunRef}>
+				<sphereGeometry args={[relativeSize, 32, 32]} />
+				<meshBasicMaterial map={texture} />
+			</mesh>
+		</>
+	);
+};
+
+export default Sun;
+```
+
+and for "_Earth.js_":
+
+```js
+import { TextureLoader } from "three";
+import { useLoader } from "@react-three/fiber";
+
+import { planetsDatas } from "../datas/celestials";
+
+const Planet = () => {
+	const textureMap = useLoader(TextureLoader, planetsDatas[2].texture);
+
+	return (
+		<>
+			<mesh position={planetsDatas[2].position}>
+				<sphereGeometry args={[planetsDatas[2].relativeSize, 32, 32]} />
+				<meshLambertMaterial map={textureMap} />
+			</mesh>
+		</>
+	);
+};
+
+export default Planet;
+```
+
+Now, you just need to clean "_App.js_" from useless code and import our two components.
+
+```js
+import { Suspense } from "react";
+import { Canvas } from "@react-three/fiber";
+
+import Sun from "./components/Sun";
+import Earth from "./components/Earth";
+
+const App = () => {
+	return (
+		<Canvas camera={{ position: [0, 30, 50], fov: 50, near: 0.1, far: 1000 }}>
+			<Suspense fallback={null}>
+				<ambientLight intensity={0.1} />
+
+				<Sun />
+
+				<Earth />
+			</Suspense>
+		</Canvas>
+	);
+};
+
+export default App;
+```
+
+Impressive. You have rewrite this code like a pro.
+
+PROGRESSION : :white_check_mark: :white_check_mark: :white_check_mark:
+
+### :trophy: STEP 3 DONE :trophy:
+
+## :file_folder: STEP 4. Add missing planets
+
+## :file_folder: STEP 5. Add rotations and revolutions
+
+## :file_folder: STEP 6. Add a Panel to display planets infos
 
 #### Special Thanks to :
