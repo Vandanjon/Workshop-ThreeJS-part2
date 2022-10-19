@@ -44,6 +44,10 @@ src
 
 Don't forget to remove unused imports.
 
+### :trophy: STEP 1 DONE :trophy:
+
+:white_check_mark:
+
 ## :file_folder: STEP 2. render scene
 
 ## :file_folder: STEP 2. create components
