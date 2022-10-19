@@ -4,21 +4,39 @@
 
 # Objective - Create a Simple Solar System
 
-Up early, you now have the power to create a new Earth. But, how exactly do we do that?
-
 ## Steps
 
 ## :file_folder: STEP 1. setup project
 
-```bash
+```
 npx create-react-app simple-solar-system
 ```
 
-```bash
+```
 npm i three @react-three/drei @react-three/fiber
 ```
 
+structure
+
+```
+src
+├── App.css
+├── App.js
+├── index.js
+├── assets
+│   ├── textures
+│   ├── trucs
+│   └── machins
+├── components
+│   ├── Planet.js
+│   └── Star.js
+```
+
+remove 'import './index.css';' from index.js
+
 ## :file_folder: STEP 2. render scene
+
+## :file_folder: STEP 2. create components
 
 ## :file_folder: STEP 3. refacto
 
