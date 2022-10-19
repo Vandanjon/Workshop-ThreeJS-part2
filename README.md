@@ -10,7 +10,9 @@ Refactor the THREEJS vanilla code and add animations to system
 
 ## :file_folder: STEP 1. Setup project
 
-Create a new React project :
+We start with the same files than the project from Part 1.
+
+But then, we create a new React project :
 
 ```
 npx create-react-app simple-solar-system
@@ -22,24 +24,26 @@ Add the following dependencies:
 npm i three @react-three/fiber @react-three/drei
 ```
 
-We will structure our project as below:
+The structure of our project's folders should be now as below:
 
 ```
 src
 ├── assets
+│   ├── background_space.jpg
+│   ├── texture_earth.jpg
 │   ├── textures
 │   │   ├── file1.jpg
 │   │   ├── file2.jpg
 │   │   └── ...
-├── components
-│   ├── Planet.js
-│   └── Sun.js
+├── css
+│   └── style.css
 ├── datas
 │   └── celestials.js
 ├── App.js
 ├── index.css
 ├── index.js
 └── logo.svg
+README.md
 ```
 
 Move the code from "_script.js_" into "_App.js_".
@@ -214,4 +218,6 @@ To do this, we will use the **_useFrame()_** Hook, which is the equivalent of **
 
 ## :file_folder: STEP 6. BONUS
 
-#### Special Thanks to :
+- Add a panel that displays planet's infos on click
+- Add Glooming for the "WOW effect"
+

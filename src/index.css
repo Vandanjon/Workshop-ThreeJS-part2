@@ -1,0 +1,41 @@
+body {
+	margin: 0;
+}
+
+#root {
+	height: 100vh;
+	background: url("./assets/textures/8k_stars_milky_way.jpg") no-repeat center /
+		cover;
+}
+
+#panel {
+	z-index: 999;
+	width: 15vw;
+	min-height: 20vh;
+	background: rgba(88, 88, 207, 0.5);
+	position: fixed;
+	right: 0;
+	top: 0;
+	border-bottom-left-radius: 10px;
+	color: aliceblue;
+	padding: 8px;
+}
+
+#panel-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 1.25rem;
+	font-weight: bold;
+	margin-bottom: 16px;
+	text-transform: capitalize;
+}
+
+.details {
+	margin-top: 12px;
+}
+
+b {
+	font-size: 1.5rem;
+}
+
