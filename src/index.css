@@ -4,8 +4,6 @@ body {
 
 #root {
 	height: 100vh;
-	background: url("./assets/textures/8k_stars_milky_way.jpg") no-repeat center /
-		cover;
 }
 
 #panel {

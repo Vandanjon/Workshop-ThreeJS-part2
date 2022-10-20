@@ -4,33 +4,26 @@
 
 # Objective - Create a Simple Solar System
 
-Refactor the THREEJS vanilla code and add animations to system
+After the hard work done in [Part 1](https://github.com/Vandanjon/Workshop-ThreeJS-part1), we rest a lot.
+
+But now, time to move our little solo planet into a shiny animated system.
 
 ## Steps
 
-## :file_folder: STEP 1. Setup project
+1. :file_folder: Setup project
+2. Convert code from vanilla **THREE.JS** to **REACT-THREE FIBER**.
+3. Build Sun-Earth relation
+4. Add missing planets
+5. Add rotations and revolutions
+6. BONUS !
 
-We start with the same files than the project from Part 1.
+## :file_folder: STEP 1. Devenir Cheyenne
 
-But then, we create a new React project :
-
-```
-npx create-react-app simple-solar-system
-```
-
-Add the following dependencies:
-
-```
-npm i three @react-three/fiber @react-three/drei
-```
-
-The structure of our project's folders should be now as below:
+To create our new universe, let's be organized. First, clone this repo, you will have the following "**_src_**" folder:
 
 ```
 src
 ├── assets
-│   ├── background_space.jpg
-│   ├── texture_earth.jpg
 │   ├── textures
 │   │   ├── file1.jpg
 │   │   ├── file2.jpg
@@ -43,12 +36,15 @@ src
 ├── index.css
 ├── index.js
 └── logo.svg
-README.md
 ```
 
-Move the code from "_script.js_" into "_App.js_".
+> _Which you would have get either by launch `npx create-react-app simple-solar-system` on the last project, remove useless files (as we will now work with React) and add datas and textures._
 
-Don't forget to remove unused imports.
+After this, you can add the following dependencies:
+
+```
+npm i three @react-three/fiber @react-three/drei
+```
 
 PROGRESSION : :white_check_mark:
 
@@ -63,6 +59,7 @@ In "_App.js_", replace ALL the code by the following:
 ```js
 import { TextureLoader } from "three";
 import { Canvas, useLoader } from "@react-three/fiber";
+
 import { planetsDatas } from "../datas/celestials";
 
 const texture = planetsDatas[2].texture;
