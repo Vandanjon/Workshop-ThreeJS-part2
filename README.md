@@ -40,10 +40,10 @@ src
 
 > _Which you would have get either by launch `npx create-react-app simple-solar-system` on the last project, remove useless files (as we will now work with React) and add datas and textures._
 
-After this, you can add the following dependencies:
+After this, you can add the following dependency:
 
 ```
-npm i three @react-three/fiber @react-three/drei
+npm i three
 ```
 
 PROGRESSION : :white_check_mark:
@@ -54,29 +54,60 @@ PROGRESSION : :white_check_mark:
 
 We will use React-Three Fiber, which is merely a React renderer for Three.js. The good thing is that it allows us to develop our solar system even faster.
 
+Install the dependency `npm i @react-three/fiber`
+
+Rewrite after entirely this files by the following:
+
+> _index.js_
+
+```js
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+
+import "./index.css";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+	<React.StrictMode>
+		<App />
+	</React.StrictMode>
+);
+```
+
 In "_App.js_", replace ALL the code by the following:
+
+> _App.js_
 
 ```js
 import { TextureLoader } from "three";
 import { Canvas, useLoader } from "@react-three/fiber";
 
-import { planetsDatas } from "../datas/celestials";
+import { planetsDatas } from "./datas/celestials";
 
 const texture = planetsDatas[2].texture;
 
-<Canvas camera={{ position: [0, 30, 50] }}>
-	<ambientLight intensity={0.1} />
+const App = () => {
+	return (
+		<Canvas camera={{ position: [0, 30, 50] }}>
+			<ambientLight intensity={0.1} />
 
-	<pointLight />
+			<pointLight />
 
-	<mesh>
-		<sphereGeometry />
-		<meshLambertMaterial map={useLoader(TextureLoader, texture)} />
-	</mesh>
-</Canvas>;
+			<mesh>
+				<sphereGeometry />
+				<meshLambertMaterial map={useLoader(TextureLoader, texture)} />
+			</mesh>
+		</Canvas>
+	);
+};
+
+export default App;
 ```
 
-Well done. We realized in a few lines the same job as before, but in half effort and time.
+Well done.
+
+We realized in a few lines the same job as before, but in half effort and time.
 
 PROGRESSION : :white_check_mark: :white_check_mark:
 
@@ -123,7 +154,7 @@ import { useLoader } from "@react-three/fiber";
 
 import { planetsDatas } from "../datas/celestials";
 
-const Planet = () => {
+const Earth = () => {
 	const textureMap = useLoader(TextureLoader, planetsDatas[2].texture);
 
 	return (
@@ -136,7 +167,7 @@ const Planet = () => {
 	);
 };
 
-export default Planet;
+export default Earth;
 ```
 
 Now, you just need to clean "_App.js_" from useless code and import our two components.
