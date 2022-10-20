@@ -208,6 +208,72 @@ Now, you should add missing planets.
 
 We won't write thousands of components here. The best is to refacto "_Earth.js_" onto a "_Planet.js_" component which will allow us to generate planets with datas from "_celestials.js_".
 
+Checklist :
+
+- Make a "Planet" component which use props from parent
+
+```js
+import { useRef } from "react";
+import { TextureLoader } from "three";
+import { useLoader } from "@react-three/fiber";
+
+const Planet = ({ texture, position, relativeSize }) => {
+	const planetRef = useRef(null);
+
+	const textureMap = useLoader(TextureLoader, texture);
+
+	return (
+		<>
+			<mesh ref={planetRef} position={position}>
+				<sphereGeometry args={[relativeSize, 32, 32]} />
+				<meshLambertMaterial map={textureMap} />
+			</mesh>
+		</>
+	);
+};
+
+export default Planet;
+```
+
+- Map on this component in "_App.js_" to display all planets
+
+> _App.js_
+
+```js
+import Planet from "./components/Planet";
+import { planetsDatas } from "./datas/celestials";
+
+...
+
+        {planetsDatas.map((p) => (
+          <Planet
+            key={p.id}
+            texture={p.texture}
+            position={p.position}
+            relativeSize={p.relativeSize}
+          />
+        ))}
+```
+
+- Import either {OrbitControls} from drei (another sugar library)
+
+`npm i @react-three/drei`
+
+```js
+import { OrbitControls } from "@react-three/drei";
+...
+
+const App = () => {
+  return (
+    <Canvas camera={{ position: [0, 30, 50], fov: 50, near: 0.1, far: 1000 }}>
+      <OrbitControls />
+	  ...
+```
+
+- Buy me a tea
+
+### :trophy: STEP 4 DONE :trophy:
+
 ## :file_folder: STEP 5. Add rotations and revolutions
 
 We have a universe, but it lacks life. We're Gods, let's snap to make magic happens.
