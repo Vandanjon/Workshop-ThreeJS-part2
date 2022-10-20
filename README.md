@@ -11,12 +11,12 @@ But now, time to move our little solo planet into a shiny animated system.
 ## Steps
 
 1. :file_folder: Setup project
-2. Convert code from vanilla **THREE.JS** to **REACT-THREE FIBER**.
-3. Build Sun-Earth relation
-4. Add missing planets
-5. Add shadows
-6. Add rotations and revolutions
-7. BONUS !
+2. :fountain_pen: Convert code from vanilla **THREE.JS** to **REACT-THREE FIBER**.
+3. :earth_africa: Build Sun-Earth relation
+4. :dizzy: Add missing planets
+5. :waning_crescent_moon: Add shadows
+6. :milky_way: Add rotations and revolutions
+7. :star: BONUS !
 
 ## :file_folder: STEP 1. Devenir Cheyenne
 
@@ -52,7 +52,7 @@ PROGRESSION:
 
 ### :trophy: STEP 1 DONE :trophy:
 
-## :file_folder: STEP 2. Convert code
+## :fountain_pen: STEP 2. Convert code
 
 We will use React-Three Fiber, which is merely a React renderer for Three.js. The good thing is that it allows us to develop our solar system even faster.
 
@@ -116,7 +116,7 @@ PROGRESSION:
 
 ### :trophy: STEP 2 DONE :trophy:
 
-## :file_folder: STEP 3. Build Sun-Earth relation
+## :earth_africa: STEP 3. Build Sun-Earth relation
 
 Create two components : "_Sun.js_" and "_Earth.js_".
 
@@ -206,7 +206,7 @@ PROGRESSION:
 
 ### :trophy: STEP 3 DONE :trophy:
 
-## :file_folder: STEP 4. Add missing planets
+## :dizzy: STEP 4. Add missing planets
 
 Now, you should add missing planets.
 
@@ -297,14 +297,14 @@ const App = () => {
 PROGRESSION:
 :white_check_mark::white_check_mark::white_check_mark::white_check_mark::eight_pointed_black_star::eight_pointed_black_star::eight_pointed_black_star:
 
-## :file_folder: STEP 5. Add shadows
+## :waning_crescent_moon: STEP 5. Add shadows
 
 ### :trophy: STEP 5 DONE :trophy:
 
 PROGRESSION:
 :white_check_mark::white_check_mark::white_check_mark::white_check_mark::white_check_mark::eight_pointed_black_star::eight_pointed_black_star:
 
-## :file_folder: STEP 6. Add rotations and revolutions
+## :milky_way: STEP 6. Add rotations and revolutions
 
 ### :trophy: STEP 6 DONE :trophy:
 
@@ -345,7 +345,7 @@ Then, import the Ecliptic component in the Planet Component to add it to the mes
 The tricky part will be to make the positions of the planets move as the page refreshes.
 To do this, we will use the **_useFrame()_** Hook, which is the equivalent of **_animate()_** in ThreeJS.
 
-## :file_folder: STEP 7. BONUS
+## :star: STEP 7. BONUS
 
 - Add a panel that displays planet's infos on click
 - Add Glooming for the "WOW effect"
