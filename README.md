@@ -211,6 +211,10 @@ We won't write thousands of components here. The best is to refacto "_Earth.js_"
 Checklist :
 
 - Make a "Planet" component which use props from parent
+<details>
+<summary>SOLUTION</summary>
+
+> _Planet.js_
 
 ```js
 import { useRef } from "react";
@@ -235,7 +239,11 @@ const Planet = ({ texture, position, relativeSize }) => {
 export default Planet;
 ```
 
+</details>
+
 - Map on this component in "_App.js_" to display all planets
+<details>
+<summary>SOLUTION</summary>
 
 > _App.js_
 
@@ -255,9 +263,15 @@ import { planetsDatas } from "./datas/celestials";
         ))}
 ```
 
+</details>
+
 - Import either {OrbitControls} from drei (another sugar library)
+<details>
+<summary>SOLUTION</summary>
 
 `npm i @react-three/drei`
+
+> _App.js_
 
 ```js
 import { OrbitControls } from "@react-three/drei";
@@ -269,6 +283,8 @@ const App = () => {
       <OrbitControls />
 	  ...
 ```
+
+</details>
 
 - Buy me a tea
 
