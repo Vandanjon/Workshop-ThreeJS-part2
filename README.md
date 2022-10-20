@@ -64,14 +64,14 @@ import { planetsDatas } from "../datas/celestials";
 
 const texture = planetsDatas[2].texture;
 
-<Canvas>
+<Canvas camera={{ position: [0, 30, 50] }}>
 	<ambientLight intensity={0.1} />
 
-	<directionalLight color="red" position={[0, 0, 5]} />
+	<pointLight />
 
 	<mesh>
 		<sphereGeometry />
-		<meshStandardMaterial map={useLoader(TextureLoader, texture)} />
+		<meshLambertMaterial map={useLoader(TextureLoader, texture)} />
 	</mesh>
 </Canvas>;
 ```
