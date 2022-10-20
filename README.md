@@ -47,7 +47,8 @@ After this, you can add the following dependency:
 npm i three
 ```
 
-PROGRESSION : :white_check_mark::eight_pointed_black_star::eight_pointed_black_star::eight_pointed_black_star::eight_pointed_black_star::eight_pointed_black_star::eight_pointed_black_star:
+PROGRESSION:
+:white_check_mark::eight_pointed_black_star::eight_pointed_black_star::eight_pointed_black_star::eight_pointed_black_star::eight_pointed_black_star::eight_pointed_black_star:
 
 ### :trophy: STEP 1 DONE :trophy:
 
@@ -110,7 +111,8 @@ Well done.
 
 We realized in a few lines the same job as before, but in half effort and time.
 
-PROGRESSION : :white_check_mark: :white_check_mark::eight_pointed_black_star::eight_pointed_black_star::eight_pointed_black_star::eight_pointed_black_star::eight_pointed_black_star:
+PROGRESSION:
+:white_check_mark::white_check_mark::eight_pointed_black_star::eight_pointed_black_star::eight_pointed_black_star::eight_pointed_black_star::eight_pointed_black_star:
 
 ### :trophy: STEP 2 DONE :trophy:
 
@@ -199,7 +201,8 @@ export default App;
 
 Impressive. You have rewrite this code like a pro.
 
-PROGRESSION : :white_check_mark: :white_check_mark: :white_check_mark::eight_pointed_black_star::eight_pointed_black_star::eight_pointed_black_star::eight_pointed_black_star:
+PROGRESSION:
+:white_check_mark::white_check_mark::white_check_mark::eight_pointed_black_star::eight_pointed_black_star::eight_pointed_black_star::eight_pointed_black_star:
 
 ### :trophy: STEP 3 DONE :trophy:
 
@@ -291,12 +294,22 @@ const App = () => {
 
 ### :trophy: STEP 4 DONE :trophy:
 
-PROGRESSION :
+PROGRESSION:
 :white_check_mark::white_check_mark::white_check_mark::white_check_mark::eight_pointed_black_star::eight_pointed_black_star::eight_pointed_black_star:
 
 ## :file_folder: STEP 5. Add shadows
 
+### :trophy: STEP 5 DONE :trophy:
+
+PROGRESSION:
+:white_check_mark::white_check_mark::white_check_mark::white_check_mark::white_check_mark::eight_pointed_black_star::eight_pointed_black_star:
+
 ## :file_folder: STEP 6. Add rotations and revolutions
+
+### :trophy: STEP 6 DONE :trophy:
+
+PROGRESSION:
+:white_check_mark::white_check_mark::white_check_mark::white_check_mark::white_check_mark::white_check_mark::eight_pointed_black_star:
 
 We have a universe, but it lacks life. We're Gods, let's snap to make magic happens.
 
@@ -336,4 +349,3 @@ To do this, we will use the **_useFrame()_** Hook, which is the equivalent of **
 
 - Add a panel that displays planet's infos on click
 - Add Glooming for the "WOW effect"
-
